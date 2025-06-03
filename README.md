@@ -1,19 +1,23 @@
-# News-Article-Recommendation-System
-News Article Recommendation System This project implements a simple content-based recommendation system for news articles using TF-IDF vectorization and cosine similarity. It recommends similar news articles based on the headline and short description text.
+# News Article Recommendation System
 
-Features
-  - Text preprocessing (cleaning, stopword removal)
-  - Vectorization using TF-IDF (max 5000 features)
-  - Similarity calculation with cosine similarity
-  - Recommend top-N similar articles given a selected article index
-  - Works on News Category Dataset (Kaggle)
+This project implements a simple **content-based recommendation system** for news articles using **TF-IDF vectorization** and **cosine similarity**. The system recommends similar news articles based on the headline and short description text.
 
-Usage
-  - Load and preprocess data
-  - Compute TF-IDF vectors and cosine similarity matrix
-  - Call the recommend_articles() function with the article index to get recommendations
+## Dataset
+The project uses the [News Category Dataset](https://www.kaggle.com/rmisra/news-category-dataset) from Kaggle, which contains over 200,000 news articles categorized into various topics.
 
-Future improvements
-  - Use transformer-based embeddings (e.g. Sentence-BERT) for better semantic understanding
-  - Add a web interface for easier interaction (e.g. Streamlit)
-  - Implement filtering by categories
+## Features
+- Text preprocessing: cleaning, lowercasing, punctuation removal, stopword removal
+- Vectorization using TF-IDF (max 5000 features)
+- Similarity calculation with cosine similarity matrix
+- Recommendation function to get top-N similar articles given an article index
+- Easy to adapt for other text datasets
+
+## Usage
+1. Load and preprocess the dataset.
+2. Compute TF-IDF vectors from cleaned text.
+3. Compute cosine similarity matrix.
+4. Use the `recommend_articles(article_index, top_n)` function to get recommended articles similar to the selected one.
+
+Example:
+```python
+recommend_articles(10, top_n=5)
